@@ -13,6 +13,6 @@ if(isset($_GET['page'])) {
 		include($file);
 	}else {
 		//if the file isn't found, redirect to 404
-		header("Location: /sites/404.php");
+		header("Location: ./sites/404.php");
 	}
 }
