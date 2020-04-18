@@ -7,6 +7,25 @@
 	font-family: 'Open Sans Condensed', sans-serif;
 }
 
+ul {
+	list-style-type: none;
+}
+
+a {
+	color: #000;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #000;
+	text-decoration: none;
+}
+
+a:visited {
+	color: #000;
+	text-decoration: none;
+}
+
 body {
 	display: flex;
 	justify-content: center;
@@ -32,5 +51,9 @@ body {
 .formbutton {
 	padding: 0.1em;
 	margin-bottom: 0.1em;
-
 }
+/* nav {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+} */

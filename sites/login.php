@@ -13,6 +13,7 @@ if (isset($_REQUEST['signin']) && !isset($_SESSION['username'])) {
 
 		if (login($_REQUEST['username'], $_REQUEST['password'])) {
 			$_SESSION['username'] = $_REQUEST['username'];
+			header('Location: ./index.php?page=landing');
 		}
 	}
 }
