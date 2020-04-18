@@ -1,5 +1,5 @@
 <?php
-//connectin to the db
+//connecting to the db
 $con = mysqli_connect("localhost", "root", "", "test");
 //signing up a new user
 //returns:
@@ -36,9 +36,12 @@ function isUsernameAvaliable($username)
 
 	$resultCount = countResults($result);
 
-	if ($resultCount == 1)
+	if ($resultCount == 1) {
 		return true;
-	else {
+	} elseif ($resultCount > 1) {
+		printErr("Duplikált felhasználó. Lépjen kapcsolatba az adminisztrátorral!");
+		return false;
+	} else {
 		printErr("A felhasználónév már foglalt!");
 		return false;
 	}
@@ -54,9 +57,9 @@ function isEmailAvaliable($email)
 
 	$resultCount = countResults($result);
 
-	if ($resultCount == 1)
+	if ($resultCount == 1) {
 		return true;
-	else {
+	} else {
 		printErr("Az E-Mail cím már foglalt!");
 		return false;
 	}
@@ -67,11 +70,14 @@ function isEmailAvaliable($email)
 // - false: credentials invalid
 function isValidLogin($username, $password)
 {
-	$result = query("SELECT * FROM users WHERE username={escape($username)} AND password={escape($password)}");
+	$esc_usr = escape($username);
+	$esc_pass = escape($password);
+	$result = query("SELECT * FROM users WHERE username='{$esc_usr}' AND password='{$esc_pass}'");
 	$count = countResults($result);
-	if ($count == 1)
+
+	if ($count == 1) {
 		return true;
-	else {
+	} else {
 		printErr("Hibás felhasználónév és/vagy jelszó");
 		return false;
 	}
@@ -94,7 +100,10 @@ function query($querystring)
 function countResults($result)
 {
 	$resultCount = 0;
-	while ($row = mysqli_fetch_assoc($result)) $resultCount++;
+	while ($row = mysqli_fetch_assoc($result)) {
+		$resultCount++;
+	}
+
 	return $resultCount;
 }
 //prints an error in a better manner
