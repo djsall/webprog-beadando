@@ -5,12 +5,12 @@ $con = mysqli_connect("localhost", "root", "", "test");
 //returns:
 // - true: signup was successful
 // - false: signup failed
-function signUp($username, $password, $confirmPassword, $email)
+function signup($username, $password, $confirmPassword, $email)
 {
-	if (isEmailAvaliable($email)) {
-		if (isUsernameAvaliable($username)) {
+	if (checkEmail($email)) {
+		if (checkUser($username)) {
 			if ($password == $confirmPassword) {
-				query("INSERT INTO users ('email', 'username', 'password') VALUES ('{escape($email)}', '{escape($username)}', '{escape($password)}'");
+				query("INSERT INTO users (email, username, password) VALUES ('" . escape($email) . "', '" . escape($username) . "', '" . escape($password) . "')");
 				return true;
 			} else {
 				printErr("A megadott jelszavak nem egyeznek!");
@@ -29,14 +29,15 @@ function signUp($username, $password, $confirmPassword, $email)
 //returns:
 // - true: username is avaliable
 // - false: username is already taken
-function isUsernameAvaliable($username)
+function checkUser($username)
 {
 	$escaped = escape($username);
 	$result = query("SELECT * FROM users WHERE username='{$escaped}';");
 
+	$resultCount = -1;
 	$resultCount = countResults($result);
 
-	if ($resultCount < 1) {
+	if ($resultCount == 0) {
 		return true;
 	} else {
 		printErr("A felhasználónév már foglalt!");
@@ -47,14 +48,15 @@ function isUsernameAvaliable($username)
 //returns:
 // - true: email is avaliable
 // - false: email is already taken
-function isEmailAvaliable($email)
+function checkEmail($email)
 {
 	$escaped = escape($email);
-	$result = query("SELECT * FROM users WHERE username='{$escaped}';");
+	$result = query("SELECT * FROM users WHERE email='{$escaped}';");
 
+	$resultCount = -1;
 	$resultCount = countResults($result);
 
-	if ($resultCount < 1) {
+	if ($resultCount == 0) {
 		return true;
 	} else {
 		printErr("Az E-Mail cím már foglalt!");
@@ -65,7 +67,7 @@ function isEmailAvaliable($email)
 //returns:
 // - true: credentials valid
 // - false: credentials invalid
-function isValidLogin($username, $password)
+function login($username, $password)
 {
 	$esc_usr = escape($username);
 	$esc_pass = escape($password);
