@@ -4,8 +4,17 @@ include('./sites/database.php');
 include('./sites/header.php');
 
 session_start();
-if (isset($_REQUEST['signin'])) {
-	echo "trying to sign in";
+
+if (isset($_SESSION['username'])) {
+	echo "már be vagy jelentkezve";
+}
+if (isset($_REQUEST['signin']) && !isset($_SESSION['username'])) {
+	if (strlen($_REQUEST['username']) > 0	&& strlen($_REQUEST['password']) > 0) {
+
+		if (login($_REQUEST['username'], $_REQUEST['password'])) {
+			$_SESSION['username'] = $_REQUEST['username'];
+		}
+	}
 }
 ?>
 <form action="" method="post" class="form">

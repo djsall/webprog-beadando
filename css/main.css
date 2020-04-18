@@ -24,4 +24,13 @@ body {
 	margin-top: 5vh;
 }
 
-.textinput {}
+.textinput {
+	padding: 0.1em;
+	margin-bottom: 0.2em;
+}
+
+.formbutton {
+	padding: 0.1em;
+	margin-bottom: 0.1em;
+
+}
