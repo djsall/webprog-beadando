@@ -10,7 +10,7 @@ function signUp($username, $password, $confirmPassword, $email)
 	if (isEmailAvaliable($email)) {
 		if (isUsernameAvaliable($username)) {
 			if ($password == $confirmPassword) {
-				query("INSERT INTO users (email, username, password) VALUES ({escape($email)}, {escape($username)}, {escape($password)}");
+				query("INSERT INTO users ('email', 'username', 'password') VALUES ('{escape($email)}', '{escape($username)}', '{escape($password)}'");
 				return true;
 			} else {
 				printErr("A megadott jelszavak nem egyeznek!");
@@ -32,18 +32,18 @@ function signUp($username, $password, $confirmPassword, $email)
 function isUsernameAvaliable($username)
 {
 	$escaped = escape($username);
-	$result = query("SELECT * FROM users WHERE username={$escaped};");
+	$result = query("SELECT * FROM users WHERE username='{$escaped}';");
 
 	$resultCount = countResults($result);
 
 	if ($resultCount == 1) {
-		return true;
+		printErr("A felhasználónév már foglalt!");
+		return false;
 	} elseif ($resultCount > 1) {
 		printErr("Duplikált felhasználó. Lépjen kapcsolatba az adminisztrátorral!");
 		return false;
 	} else {
-		printErr("A felhasználónév már foglalt!");
-		return false;
+		return true;
 	}
 }
 //Checks if an email is taken or not
@@ -53,7 +53,7 @@ function isUsernameAvaliable($username)
 function isEmailAvaliable($email)
 {
 	$escaped = escape($email);
-	$result = query("SELECT * FROM users WHERE username={$escaped};");
+	$result = query("SELECT * FROM users WHERE username='{$escaped}';");
 
 	$resultCount = countResults($result);
 
