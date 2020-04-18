@@ -36,14 +36,11 @@ function isUsernameAvaliable($username)
 
 	$resultCount = countResults($result);
 
-	if ($resultCount == 1) {
+	if ($resultCount < 1) {
+		return true;
+	} else {
 		printErr("A felhasználónév már foglalt!");
 		return false;
-	} elseif ($resultCount > 1) {
-		printErr("Duplikált felhasználó. Lépjen kapcsolatba az adminisztrátorral!");
-		return false;
-	} else {
-		return true;
 	}
 }
 //Checks if an email is taken or not
@@ -57,7 +54,7 @@ function isEmailAvaliable($email)
 
 	$resultCount = countResults($result);
 
-	if ($resultCount == 1) {
+	if ($resultCount < 1) {
 		return true;
 	} else {
 		printErr("Az E-Mail cím már foglalt!");
