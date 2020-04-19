@@ -26,16 +26,15 @@ include('./sites/header.php');
 
 			?>
 		</li>
-		<li class="navListItem">
-			<?php
-			if (isset($username)) {
-				echo '<a href="./index.php?page=logout">Log out!</a>';
-			} else {
-				echo "placeholder";
-			}
 
-			?>
-		</li>
+		<?php
+		if (isset($username)) {
+			echo '<li class="navListItem">';
+			echo '<a href="./index.php?page=logout">Log out!</a>';
+			echo '</li>';
+		}
+		?>
+
 	</ul>
 </nav>
 
