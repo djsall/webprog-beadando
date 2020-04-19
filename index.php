@@ -15,4 +15,6 @@ if (isset($_GET['page'])) {
 		//if the file isn't found, redirect to 404
 		header("Location: ./sites/404.php");
 	}
+} else {
+	header('Location: ./index.php/?page=landing');
 }
