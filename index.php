@@ -1,6 +1,6 @@
 <?php
 //defining valid pages
-$pages = array("landing", "login", "signup", "gallery", "upload", "logout");
+$pages = array("landing", "login", "signup", "gallery", "upload", "logout", "create_db");
 //if the request is for another page
 if (isset($_GET['page'])) {
 	//save the page into a variable
