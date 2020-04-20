@@ -16,5 +16,5 @@ if (isset($_GET['page'])) {
 		header("Location: ./sites/404.php");
 	}
 } else {
-	header('Location: ./index.php/?page=landing');
+	header('Location: ./?page=landing');
 }
