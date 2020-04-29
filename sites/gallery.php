@@ -20,6 +20,7 @@ include("./sites/header.php");
 ?>
 <div class="gallery">
 	<p class="bannerText">Galéria</p>
+	<a class="upload-link" href="./index.php?page=upload">Kép feltöltése</a>
 	<?php
 	arsort($pictures);
 	foreach ($pictures as $file => $date) {

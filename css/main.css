@@ -92,6 +92,15 @@ body {
 	min-width: 10vh;
 	max-height: 40vh;
 }
+.upload-link {
+	font-size: 3.8vh;
+
+	margin: 2.5vh 0 4vh 0;
+	border-bottom: 1px solid gray;
+}
+.upload-link:hover {
+	border-bottom: 1px solid black;
+}
 @media screen and (min-width: 361px) {
 	.form {
 		width: 25vh;
@@ -116,5 +125,14 @@ body {
 		max-width: 25vw;
 		min-width: 10vw;
 		max-height: 40vh;
+	}
+	.upload-link {
+		font-size: 2.8vh;
+
+		margin: 2.5vh 0 4vh 0;
+		border-bottom: 1px solid transparent;
+	}
+	.upload-link:hover {
+		border-bottom: 1px solid black;
 	}
 }
