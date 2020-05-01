@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 $FOLDER = './img/';
 $MIMES = array('.jpg', '.png');
 $DATE_FORMAT = "Y.m.d. H:i";
@@ -17,6 +17,7 @@ while (($file = readdir($olvaso)) !== false) {
 closedir($olvaso);
 
 include("./sites/header.php");
+
 ?>
 <div class="gallery">
 	<p class="bannerText">Galéria</p>

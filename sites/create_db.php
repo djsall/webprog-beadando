@@ -8,4 +8,9 @@ query('CREATE TABLE IF NOT EXISTS users(
 	username varchar(32),
 	password varchar(32)
 )');
+query('CREATE TABLE IF NOT EXISTS messages(
+	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	userid INT,
+	message varchar(512)
+)');
 echo "created db if it didn't already exist";

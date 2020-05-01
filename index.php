@@ -1,6 +1,6 @@
 <?php
 //defining valid pages
-$pages = array("landing", "login", "signup", "gallery", "upload", "logout", "create_db");
+$pages = array("landing", "login", "signup", "gallery", "upload", "logout", "create_db", "message", "404");
 //if the request is for another page
 if (isset($_GET['page'])) {
 	//save the page into a variable
@@ -13,7 +13,7 @@ if (isset($_GET['page'])) {
 		include($file);
 	} else {
 		//if the file isn't found, redirect to 404
-		header("Location: ./sites/404.php");
+		header("Location: ./?page=404");
 	}
 } else {
 	header('Location: ./?page=landing');

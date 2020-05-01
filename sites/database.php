@@ -1,6 +1,23 @@
 <?php
 //connecting to the db
 $con = mysqli_connect("localhost", "root", "", "test");
+//saving a message sent from the contact form
+function saveMessage($message)
+{
+	global $con;
+	if (isset($_SESSION['username'])) {
+		$username = $_SESSION['username'];
+		if (strlen($message) > 0 && strlen($message) < 512) {
+			$escaped = escape($message);
+			$userid_array = mysqli_fetch_array(mysqli_query($con, "SELECT id FROM users WHERE username='{$username}'"));
+			$userid = $userid_array['id'];
+			echo $username . ", " . $userid;
+			// query("INSERT INTO messages (userid, message) VALUES ()");
+		} else echo "<p>Az üzenet maximum 512 karakter hosszú lehet, és minimum 32 karakterből kell álljon.</p>";
+	} else echo "<p>Kérem jelentkezzen be, mielőtt üzenetet küldene!</p>";
+}
+
+
 //signing up a new user
 //returns:
 // - true: signup was successful
