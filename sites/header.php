@@ -28,6 +28,9 @@
 				<a href="./index.php?page=landing">Kezdőlap</a>
 			</li>
 			<li class="navListItem">
+				<a href="./index.php?page=landing2">Aloldal</a>
+			</li>
+			<li class="navListItem">
 				<a href="./index.php?page=videos">Videók</a>
 			</li>
 			<li class="navListItem">

@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap');
 
+nonprofit {
+	margin: 2vh 2vh 0 2vh;
+	font-size: 1.3vh;
+}
+
 * {
 	box-sizing: border-box;
 	padding: 0;
@@ -103,6 +108,9 @@ body {
 	border-bottom: 1px solid black;
 }
 @media screen and (min-width: 361px) {
+	nonprofit {
+		margin: 5vh 20vh 0 20vh;
+	}
 	.form {
 		width: 25vh;
 	}
