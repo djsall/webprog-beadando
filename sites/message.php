@@ -1,4 +1,16 @@
 <?php
 session_start();
 include('./sites/database.php');
-saveMessage("asd");
+include('./sites/header.php');
+
+// saveMessage("harmincketkarakteresüzenet");
+
+if (isset($_REQUEST['send']) && isset($_REQUEST['text'])) {
+	saveMessage($_REQUEST['text']);
+}
+?>
+<form action="" class="form" method="POST">
+	<p class="bannerText">Üzenet küldése</p>
+	<textarea name="text"></textarea>
+	<input type="submit" value="Küldés!" name="send">
+</form>
