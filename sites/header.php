@@ -7,7 +7,7 @@
 	<title>
 		<?php
 		if (isset($_SESSION['username'])) $username = $_SESSION['username'];
-		$site_name = "under development";
+		$site_name = "Ételt az életért";
 		if (isset($_SESSION['username']))
 			echo $_SESSION['username'] . " - " . $site_name;
 		else
