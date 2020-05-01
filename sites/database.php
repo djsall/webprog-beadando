@@ -1,6 +1,6 @@
 <?php
 //connecting to the db
-$con = mysqli_connect("localhost", "root", "", "test");
+$con = mysqli_connect("localhost", "root", "random", "test");
 //saving a message sent from the contact form
 function saveMessage($message)
 {
