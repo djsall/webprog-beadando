@@ -1,5 +1,5 @@
 <?php
-$con = mysqli_connect("localhost", "root", "random");
+$con = mysqli_connect("localhost", "gregandsall", "random");
 mysqli_query($con, 'CREATE DATABASE IF NOT EXISTS test CHARACTER SET UTF8');
 include('./sites/database.php');
 query('CREATE TABLE IF NOT EXISTS users(
