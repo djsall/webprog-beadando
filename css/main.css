@@ -109,8 +109,55 @@ body {
 }
 @media screen and (min-width: 361px) {
 	nonprofit {
-		margin: 5vh 20vh 0 20vh;
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		background-color: #8eb65d;
+		width: 100vw;
+		height: 90vh;
 	}
+
+	nonprofit > div {
+		background-color: #f9e4a5;
+
+		width: 60vw;
+	}
+	
+	nonprofit > #mainContent {
+		padding: 5vh 8vh 5vh 8vh;
+
+	}
+
+	nonprofit > #tableContainer {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	nonprofit > #tableContainer table, tbody {
+		width: 80vw;
+	}
+
+    nonprofit img {
+		max-width: 60vw;
+	}
+
+	nonprofit p {
+		font-size: 3vh;
+		padding-bottom: 3vh;
+	}
+
+	nonprofit h1 {
+		font-size: 4vh;
+		padding-bottom: 5vh;
+	}
+
+	nonprofit img {
+		width: auto;
+
+	}
+
 	.form {
 		width: 25vh;
 	}

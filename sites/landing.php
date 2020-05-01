@@ -3,6 +3,10 @@ session_start();
 include('./sites/header.php');
 ?>
 <nonprofit>
+	<div>
+		<img src="https://www.karitativ.hu/wp-content/uploads/2020/01/top1%C3%BAj-1.jpg" alt="logo">
+	</div>
+	<div id="mainContent">	
 	<h1>
 		Üdvözlünk honlapunkon!
 	</h1>
@@ -19,6 +23,7 @@ include('./sites/header.php');
 		Mottónk: „Testi-lelki egészség”, hisz mindennapos tevékenységünk során célunk túlmutat a gyomor megtöltésén. Azon túl, hogy a meleg étel kézzelfogható segítséget jelent egyes embereknek, társadalmunk általános életminőségén, táplálkozási szokásain az egymás iránti tolerancia bemutatása által kívánunk javítani.
 	</p>
 	<a href="https://www.karitativ.hu/">Eredeti oldal</a>
+</div>
 </nonprofit>
 <?php
 include('./sites/footer.php');
