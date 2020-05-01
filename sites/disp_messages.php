@@ -6,8 +6,6 @@ include('./sites/header.php');
 $messages_q = mysqli_query($con, "SELECT userid, message FROM messages");
 ?>
 
-
-
 <ul>
 	<?php
 	while ($row = mysqli_fetch_row($messages_q)) {
@@ -15,23 +13,6 @@ $messages_q = mysqli_query($con, "SELECT userid, message FROM messages");
 	}
 	?>
 </ul>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <?php
 include('./sites/footer.php');

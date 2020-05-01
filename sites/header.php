@@ -28,6 +28,9 @@
 				<a href="./index.php?page=landing">Kezdőlap</a>
 			</li>
 			<li class="navListItem">
+				<a href="./index.php?page=videos">Videók</a>
+			</li>
+			<li class="navListItem">
 				<?php
 				if ($current_page == "gallery") {
 					echo '<a href="./index.php?page=upload">Kép feltöltése</a>';
@@ -37,7 +40,14 @@
 				?>
 			</li>
 			<li class="navListItem">
-				<a href="./index.php?page=message">Üzenet küldése</a>
+				<?php
+				if ($current_page == "message") {
+					echo '<a href="./index.php?page=disp_messages">Beküldött üzenetek</a>';
+				} else {
+					echo '<a href="./index.php?page=message">Üzenet küldése</a>';
+				}
+				?>
+
 			</li>
 			<li class="navListItem">
 				<?php
