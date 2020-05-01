@@ -25,26 +25,26 @@
 	<nav>
 		<ul class="navList">
 			<li class="navListItem">
-				<a href="./index.php?page=landing">Home</a>
+				<a href="./index.php?page=landing">Kezdőlap</a>
 			</li>
 			<li class="navListItem">
 				<?php
 				if ($current_page == "gallery") {
-					echo '<a href="./index.php?page=upload">Upload Image</a>';
+					echo '<a href="./index.php?page=upload">Kép feltöltése</a>';
 				} else {
-					echo '<a href="./index.php?page=gallery">Gallery</a>';
+					echo '<a href="./index.php?page=gallery">Galéria</a>';
 				}
 				?>
 			</li>
 			<li class="navListItem">
-				<a href="./index.php?page=message">Message</a>
+				<a href="./index.php?page=message">Üzenet küldése</a>
 			</li>
 			<li class="navListItem">
 				<?php
 				if (isset($username)) {
 					echo "<p>{$username}</p>";
 				} else {
-					echo '<a href="./index.php?page=login">Sign in!</a>';
+					echo '<a href="./index.php?page=login">Bejelentkezés!</a>';
 				}
 
 				?>
