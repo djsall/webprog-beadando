@@ -1,8 +1,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap');
 
 nonprofit {
-	margin: 2vh 2vh 0 2vh;
-	font-size: 1.3vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: #8eb65d;
+	width: 100vw;
+}
+nonprofit > #imgCont {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+nonprofit > #imgCont > img {
+	width: 50vw;
+}
+
+nonprofit > div {
+	background-color: #f9e4a5;
+	width: 50vw;
+}
+
+nonprofit > #mainContent {
+	padding: 5vh 8vh 5vh 8vh;
+	min-height: 74vh;
+}
+
+nonprofit > #mainContent > #tableContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+nonprofit p {
+	font-size: 3vh;
+	padding-bottom: 3vh;
+}
+
+nonprofit h1 {
+	font-size: 4vh;
+	margin-bottom: 5vh;
 }
 
 * {
@@ -10,7 +47,7 @@ nonprofit {
 	padding: 0;
 	margin: 0;
 	font-family: 'Open Sans Condensed', sans-serif;
-	font-size: 3.5vh;
+	font-size: 1.8vh;
 }
 
 ul {
@@ -39,14 +76,14 @@ body {
 }
 
 .bannerText {
-	font-size: 8vh;
+	font-size: 7vh;
 	text-align: center;
 }
 
 .form {
 	display: flex;
 	flex-direction: column;
-	width: 65vw;
+	width: 25vh;
 	margin-top: 5vh;
 }
 
@@ -59,11 +96,13 @@ body {
 	padding: 0.1em;
 	margin-bottom: 0.1em;
 }
+
 .navList {
 	margin-top: 2.5vh;
 	display: flex;
 	flex-direction: row;
 }
+
 .navListItem {
 	display: flex;
 	flex-direction: row;
@@ -71,15 +110,17 @@ body {
 	margin: 0 2.5vh;
 	border-bottom: 1px solid transparent;
 }
+
 .navListItem:hover {
 	border-bottom: 1px solid black;
 }
+
 .gallery {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	width: 80vw;
 	margin-top: 5vh;
+	width: 65vw;
 }
 
 .gallery .kep {
@@ -87,108 +128,26 @@ body {
 	flex-direction: column;
 	align-items: center;
 	margin-bottom: 5vh;
-	width: 60vw;
+	width: 25vw;
 }
+
 .gallery .kep > p {
 	font-size: 2vh;
-	max-width: 60vw;
+	max-width: 50vw;
 }
 
 .gallery img {
-	max-width: 35vh;
-	min-width: 10vh;
+	max-width: 25vw;
+	min-width: 10vw;
 	max-height: 40vh;
 }
+
 .upload-link {
-	font-size: 3.8vh;
+	font-size: 2.8vh;
 	margin: 2.5vh 0 4vh 0;
 	border-bottom: 1px solid transparent;
 }
+
 .upload-link:hover {
 	border-bottom: 1px solid black;
-}
-@media screen and (min-width: 361px) {
-	nonprofit {
-
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		background-color: #8eb65d;
-		width: 100vw;
-		height: 90vh;
-	}
-
-	nonprofit > div {
-		background-color: #f9e4a5;
-
-		width: 60vw;
-	}
-	
-	nonprofit > #mainContent {
-		padding: 5vh 8vh 5vh 8vh;
-
-	}
-
-	nonprofit > #tableContainer {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-	}
-
-	nonprofit > #tableContainer table, tbody {
-		width: 80vw;
-	}
-
-    nonprofit img {
-		max-width: 60vw;
-	}
-
-	nonprofit p {
-		font-size: 3vh;
-		padding-bottom: 3vh;
-	}
-
-	nonprofit h1 {
-		font-size: 4vh;
-		padding-bottom: 5vh;
-	}
-
-	nonprofit img {
-		width: auto;
-
-	}
-
-	.form {
-		width: 25vh;
-	}
-	.bannerText {
-		font-size: 7vh;
-	}
-	* {
-		font-size: 1.8vh;
-	}
-	.gallery {
-		width: 65vw;
-		margin-top: 5vh;
-	}
-	.gallery .kep {
-		width: 25vw;
-	}
-	.gallery .kep > p {
-		max-width: 50vw;
-	}
-	.gallery img {
-		max-width: 25vw;
-		min-width: 10vw;
-		max-height: 40vh;
-	}
-	.upload-link {
-		font-size: 2.8vh;
-
-		margin: 2.5vh 0 4vh 0;
-		border-bottom: 1px solid transparent;
-	}
-	.upload-link:hover {
-		border-bottom: 1px solid black;
-	}
 }
