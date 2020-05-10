@@ -1,7 +1,3 @@
-<?php
-session_start();
-include('./sites/header.php');
-?>
 <nonprofit>
 	<div id="imgCont">
 		<img src="https://www.karitativ.hu/wp-content/uploads/2020/01/top1%C3%BAj-1.jpg" alt="logo">
@@ -25,5 +21,3 @@ include('./sites/header.php');
 		<a href="https://www.karitativ.hu/">Eredeti oldal</a>
 	</div>
 </nonprofit>
-<?php
-include('./sites/footer.php');

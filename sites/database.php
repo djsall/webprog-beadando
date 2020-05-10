@@ -11,7 +11,7 @@ function saveMessage($message)
 			$escaped = escape($message);
 			$userid_array = mysqli_fetch_array(mysqli_query($con, "SELECT id FROM users WHERE username='{$username}'"));
 			$userid = $userid_array['id'];
-			query("INSERT INTO messages (userid, message) VALUES ('{$userid}', '{$message}')");
+			query("INSERT INTO messages (userid, message) VALUES ('{$userid}', '{$escaped}')");
 		} else echo "<p>Az üzenet maximum 512 karakter hosszú lehet, és minimum 8 karakterből kell álljon.</p>";
 	} else echo "<p>Kérem jelentkezzen be, mielőtt üzenetet küldene!</p>";
 }

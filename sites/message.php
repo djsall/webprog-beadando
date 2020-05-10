@@ -1,7 +1,5 @@
 <?php
-session_start();
 include('./sites/database.php');
-include('./sites/header.php');
 
 if (isset($_REQUEST['send']) && isset($_REQUEST['text'])) {
 	saveMessage($_REQUEST['text']);
@@ -12,9 +10,6 @@ if (isset($_REQUEST['send']) && isset($_REQUEST['text'])) {
 	<textarea name="text" maxlength="512" minlength="8" oninput="inputFunc()"></textarea>
 	<input type="submit" value="Küldés!" name="send">
 </form>
-<?php
-include('./sites/footer.php');
-?>
 <script>
 	let textarea = document.getElementsByName("text")[0];
 	let submit = document.getElementsByName("send")[0];

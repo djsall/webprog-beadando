@@ -1,10 +1,6 @@
 <?php
 include('./sites/database.php');
 
-include('./sites/header.php');
-
-session_start();
-
 if (isset($_REQUEST['signup']) && !isset($_SESSION['username'])) {
 	$email = $_REQUEST['email'];
 	$username = $_REQUEST['username'];
@@ -17,7 +13,7 @@ if (isset($_REQUEST['signup']) && !isset($_SESSION['username'])) {
 		&& strlen($cPassword) > 0
 	) {
 		if (signup($username, $password, $cPassword, $email)) {
-			header('Location: ./index.php?page=login');
+			header('Location: ./?page=login');
 		}
 	}
 }
@@ -32,15 +28,12 @@ if (isset($_REQUEST['signup']) && !isset($_SESSION['username'])) {
 	<input type="submit" value="Sign up!" class="formbutton" name="signup">
 	<button type="button" id="signinRedirectBtn" class="formbutton">Sign in!</button>
 </form>
-<?php
-include('./sites/footer.php');
-?>
 <script>
 	function elById(id) {
 		return document.getElementById(id);
 	}
 
 	elById("signinRedirectBtn").addEventListener("click", () => {
-		document.location.replace("./index.php?page=login");
+		document.location.replace("./?page=login");
 	})
 </script>

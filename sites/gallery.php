@@ -1,5 +1,4 @@
 <?php
-session_start();
 $FOLDER = './img/';
 $MIMES = array('.jpg', '.png');
 $DATE_FORMAT = "Y.m.d. H:i";
@@ -16,12 +15,10 @@ while (($file = readdir($olvaso)) !== false) {
 }
 closedir($olvaso);
 
-include("./sites/header.php");
-
 ?>
 <div class="gallery">
 	<p class="bannerText">Galéria</p>
-	<a class="upload-link" href="./index.php?page=upload">Kép feltöltése</a>
+	<a class="upload-link" href="./?page=upload">Kép feltöltése</a>
 	<?php
 	arsort($pictures);
 	foreach ($pictures as $file => $date) {
@@ -37,6 +34,3 @@ include("./sites/header.php");
 	}
 	?>
 </div>
-<?php
-include("./sites/footer.php");
-?>

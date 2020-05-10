@@ -1,5 +1,4 @@
 <?php
-session_start();
 $FOLDER = './img/';
 $MIMETYPES = array('image/jpeg', 'image/png');
 $MAXRES = 2000 * 2000;
@@ -31,7 +30,6 @@ if (isset($_SESSION['username'])) {
 } else {
 	$message = "Kérem jelentkezzen be a feltöltés előtt!";
 }
-include("./sites/header.php");
 ?>
 
 <form action="" method="post" enctype="multipart/form-data" class="form">
@@ -41,4 +39,3 @@ include("./sites/header.php");
 
 	<?php echo "<p>$message</p>";	?>
 </form>
-<?php include("./sites/footer.php"); ?>

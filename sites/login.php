@@ -1,10 +1,6 @@
 <?php
 include('./sites/database.php');
 
-include('./sites/header.php');
-
-session_start();
-
 if (isset($_SESSION['username'])) {
 	echo "már be vagy jelentkezve";
 }
@@ -13,7 +9,7 @@ if (isset($_REQUEST['signin']) && !isset($_SESSION['username'])) {
 
 		if (login($_REQUEST['username'], $_REQUEST['password'])) {
 			$_SESSION['username'] = $_REQUEST['username'];
-			header('Location: ./index.php?page=landing');
+			header('Location: ./?page=landing');
 		}
 	}
 }
@@ -25,14 +21,11 @@ if (isset($_REQUEST['signin']) && !isset($_SESSION['username'])) {
 	<input type="submit" value="Sign in!" class="formbutton" name="signin">
 	<button type="button" id="signupRedirectBtn" class="formbutton">Sign up!</button>
 </form>
-<?php
-include('./sites/footer.php');
-?>
 <script>
 	function elById(id) {
 		return document.getElementById(id);
 	}
 	elById("signupRedirectBtn").addEventListener("click", () => {
-		document.location.replace("./index.php?page=signup");
+		document.location.replace("./?page=signup");
 	})
 </script>

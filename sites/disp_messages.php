@@ -1,7 +1,5 @@
 <?php
-session_start();
 include('./sites/database.php');
-include('./sites/header.php');
 
 $messages_q = mysqli_query($con, "SELECT userid, message FROM messages ORDER BY id DESC");
 ?>
@@ -13,7 +11,3 @@ $messages_q = mysqli_query($con, "SELECT userid, message FROM messages ORDER BY 
 	}
 	?>
 </ul>
-
-<?php
-include('./sites/footer.php');
-?>
